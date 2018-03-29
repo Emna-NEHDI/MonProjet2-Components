@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule} from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
@@ -9,12 +7,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductsService } from './services/products.service';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AppRoutingModule } from './routing_module/app-routing.module';
 
-const routes = [
-  {path: '', component: WelcomeComponent},
-  {path: 'list', component: ProductListComponent},
-  {path: '***', component: NotFoundComponent}
-] ;
+
 
 @NgModule({
   declarations: [
@@ -27,8 +22,8 @@ const routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
+    AppRoutingModule
+ ],
   providers: [
     ProductsService
   ],
